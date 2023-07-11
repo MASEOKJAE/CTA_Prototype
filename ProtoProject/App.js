@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button, TextInput, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, Button, TextInput, ScrollView, FlatList } from 'react-native';
 
 export default function App() {
   const [people, setPeople] = useState([
@@ -16,15 +16,12 @@ export default function App() {
   return (
     <View style={styles.container}>
 
-      <ScrollView>
-        { people.map((item) => {
-          return (
-            <View key={item.key}>
-              <Text style={styles.mapItem}>{item.name}</Text>
-            </View>
-          )
-        })}
-      </ScrollView>
+      <FlatList
+        keyExtractor={(item) => item.key}
+        data={people}
+        renderItem={({ item }) => (
+          <Text style={(styles.mapItem)}>{item.name}</Text>
+        )}/>
       
       {/* 위 아래 같은 기능 다른 모습 */}
       {/* <ScrollView>
@@ -52,6 +49,8 @@ const styles = StyleSheet.create({
     marginTop: 24,
     padding: 30,
     backgroundColor: 'skyblue',
-    fontSize: 24
+    fontSize: 24,
+    marginHorizontal: 10,
+    marginTop: 10
   }
 });
