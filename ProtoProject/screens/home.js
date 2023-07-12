@@ -12,7 +12,7 @@ export default function Home({ navigation }) {
         if(key == 1)
             navigation.navigate('QrScan');
         else
-            navigation.navigate('QrScan');
+            navigation.navigate('ColorDetect');
       }
 
     return (

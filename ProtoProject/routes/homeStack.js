@@ -2,6 +2,7 @@ import { createStackNavigator } from 'react-navigation-stack';
 import { createAppContainer } from 'react-navigation';
 import Home from '../screens/home';
 import QrScan from '../screens/qrScan';
+import ColorDetect from '../screens/colorDetect';
 
 // screens에서 가장 먼저 선언된 screen이 default screen이다.
 const screens = {
@@ -10,6 +11,9 @@ const screens = {
     },
     QrScan: {
         screen: QrScan
+    },
+    ColorDetect: {
+        screen: ColorDetect
     }
 }
 

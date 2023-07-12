@@ -17,14 +17,6 @@ export default function QrScan() {
       const handleBarCodeScanned = ({ type, data }) => {
         setScanned(true);
         openWebsite(data);
-      };
-
-      const pressHandler = (key) => {
-        if (key === '1') {
-          setScanned(false); // Reset scanned state
-        } else if (key === '2') {
-          // Implement the logic for the '기기 온도 체크' functionality
-        }
       };    
     
       const openWebsite = (url) => {
